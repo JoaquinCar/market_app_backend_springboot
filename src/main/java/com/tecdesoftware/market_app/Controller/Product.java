@@ -1,52 +1,57 @@
 package com.tecdesoftware.market_app.Controller;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
-@Entity
+@Entity //this annotation indicates that this class is an entity and is mapped to a database table
+@Table(name = "productos") // indica el nombre exacto de la tabla en la base de datos
 public class Product {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
-    String name;
-    Double price;
-    Integer stock;
+    @Column(name = "id_producto") // columna correspondiente en la BD
+    private Long id;
+
+    @Column(name = "nombre")
+    private String name;
+
+    @ManyToOne
+    @JoinColumn(name = "id_categoria", nullable = false) // nombre de la columna en la BD
+    private Categoria categoria;
+
+    @Column(name = "precio_venta")
+    private Double price;
+
+    @Column(name = "cantidad_stock")
+    private Integer stock;
+
+    @Column(name = "codigo_barras")
+    private String codigoBarras;
+
+    @Column(name = "estado")
+    private Boolean estado;
 
 
-    // Getters y Setters
-    public Long getId() {
-        return id;
-    }
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
 
-    public String getName() {
-        return name;
-    }
+    public Double getPrice() { return price; }
+    public void setPrice(Double price) { this.price = price; }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public Integer getStock() { return stock; }
+    public void setStock(Integer stock) { this.stock = stock; }
 
-    public Double getPrice() {
-        return price;
-    }
+    public String getCodigoBarras() { return codigoBarras; }
+    public void setCodigoBarras(String codigoBarras) { this.codigoBarras = codigoBarras; }
 
-    public void setPrice(Double price) {
-        this.price = price;
-    }
+    public Boolean getEstado() { return estado; }
+    public void setEstado(Boolean estado) { this.estado = estado; }
 
-    public Integer getStock() {
-        return stock;
-    }
+    public Categoria getCategoria() { return categoria; }
+    public void setCategoria(Categoria categoria) { this.categoria = categoria; }
 
-    public void setStock(Integer stock) {
-        this.stock = stock;
-    }
 
 }
                     
