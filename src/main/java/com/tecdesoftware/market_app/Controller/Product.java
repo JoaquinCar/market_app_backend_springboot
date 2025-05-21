@@ -1,5 +1,5 @@
 package com.tecdesoftware.market_app.Controller;
-
+import java.math.BigDecimal;
 import jakarta.persistence.*;
 
 @Entity //this annotation indicates that this class is an entity and is mapped to a database table
@@ -9,7 +9,7 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_producto") // columna correspondiente en la BD
-    private Long id;
+    private Integer id;
 
     @Column(name = "nombre")
     private String name;
@@ -22,7 +22,7 @@ public class Product {
     private String codigoBarras;
 
     @Column(name = "precio_venta")
-    private Double price;
+    private BigDecimal price;
 
     @Column(name = "cantidad_stock")
     private Integer stock;
@@ -31,14 +31,14 @@ public class Product {
     private Boolean estado;
 
 
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
+    public Integer getId() { return id; }
+    public void setId(Integer id) { this.id = id; }
 
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
 
-    public Double getPrice() { return price; }
-    public void setPrice(Double price) { this.price = price; }
+    public BigDecimal getPrice() { return price; }
+    public void setPrice(BigDecimal price) { this.price = price; }
 
     public Integer getStock() { return stock; }
     public void setStock(Integer stock) { this.stock = stock; }
