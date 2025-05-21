@@ -14,18 +14,18 @@ public class Product {
     @Column(name = "nombre")
     private String name;
 
-    @ManyToOne
+    @ManyToOne // indica que hay una relación de muchos a uno con la entidad Categoria
     @JoinColumn(name = "id_categoria", nullable = false) // nombre de la columna en la BD
     private Categoria categoria;
+
+    @Column(name = "codigo_barras")
+    private String codigoBarras;
 
     @Column(name = "precio_venta")
     private Double price;
 
     @Column(name = "cantidad_stock")
     private Integer stock;
-
-    @Column(name = "codigo_barras")
-    private String codigoBarras;
 
     @Column(name = "estado")
     private Boolean estado;
