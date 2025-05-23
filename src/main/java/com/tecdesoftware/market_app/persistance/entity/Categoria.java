@@ -1,4 +1,4 @@
-package com.tecdesoftware.market_app.Controller;
+package com.tecdesoftware.market_app.persistance.entity;
 
 import jakarta.persistence.*;
 

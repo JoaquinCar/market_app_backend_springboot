@@ -1,4 +1,4 @@
-package com.tecdesoftware.market_app.Controller;
+package com.tecdesoftware.market_app.persistance.entity;
 import java.math.BigDecimal;
 import jakarta.persistence.*;
 
@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // indica que el valor de este campo se generará automáticamente
     @Column(name = "id_producto") // columna correspondiente en la BD
     private Integer id;
 
@@ -54,4 +54,3 @@ public class Product {
 
 
 }
-                    
