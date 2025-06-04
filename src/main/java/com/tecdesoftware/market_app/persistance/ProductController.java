@@ -1,20 +1,26 @@
-package com.tecdesoftware.market_app.persistance.crud;
+package com.tecdesoftware.market_app.persistance;
 
 import com.tecdesoftware.market_app.persistance.entity.Product;
-import com.tecdesoftware.market_app.persistance.crud.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController
-public class ProductController {
+@Repository
+public class ProductRepository {
+
     @Autowired
     private ProductRepository productRepository;
 
+
+
     @GetMapping("/products")
-    public List<Product> getProducts() {
-        return productRepository.findAll();
+    public List<Product> getAll() {
+
+        return productRepository.getAll();
     }
+
+
 }

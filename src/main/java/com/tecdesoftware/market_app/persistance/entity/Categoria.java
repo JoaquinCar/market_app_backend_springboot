@@ -1,7 +1,7 @@
 package com.tecdesoftware.market_app.persistance.entity;
 
 import jakarta.persistence.*;
-
+import java.util.List;
 @Entity
 @Table(name = "categorias")
 public class Categoria {
@@ -16,6 +16,11 @@ public class Categoria {
 
     @Column(name = "estado", nullable = false)
     private Boolean estado;
+
+
+    @OneToMany(mappedBy = "categoria") //en mappedBy se indica el nombre del atributo en la entidad Product que hace referencia a esta entidad
+    private List<Product> productos;
+
 
     // Getters y Setters
 

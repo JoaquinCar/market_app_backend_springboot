@@ -1,10 +1,9 @@
 package com.tecdesoftware.market_app.persistance.entity;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "clientes")
@@ -23,6 +22,11 @@ public class Cliente {
 
     @Column(name = "correo_electronico")
     private String correoElectronico;
+
+
+    //usamos cliente para que la relación sea bidireccional, es decir, desde Compra podemos acceder a Cliente
+    @OneToMany(mappedBy = "cliente") //mappedBy indica que esta entidad es la dueña de la relación
+    private List<Compra> compras;
 
 
     public String getId() {
