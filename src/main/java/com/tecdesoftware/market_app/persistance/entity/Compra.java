@@ -24,7 +24,12 @@ public class Compra {
 
     private String comentario;
 
+    @Column(name = "estado", columnDefinition = "CHAR(1)")
     private String estado;
+
+
+
+
 
     // Relación con la entidad Cliente, join column porque id cliente es una clave foránea en la tabla compras
     @ManyToOne // indica que hay una relación de muchos a uno con la entidad Cliente

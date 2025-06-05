@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.tecdesoftware.market_app.persistance.crud.ProductCrudRepository;
 
 import java.util.List;
 
@@ -12,15 +13,10 @@ import java.util.List;
 public class ProductRepository {
 
     @Autowired
-    private ProductRepository productRepository;
+    private ProductCrudRepository productCrudRepository;  // Inyecta el CrudRepository, no a sí mismo
 
-
-
-    @GetMapping("/products")
     public List<Product> getAll() {
-
-        return productRepository.getAll();
+        return (List<Product>) productCrudRepository.findAll();  // Usa el CrudRepository
     }
-
-
 }
+

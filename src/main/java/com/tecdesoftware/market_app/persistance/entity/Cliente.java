@@ -3,6 +3,7 @@ package com.tecdesoftware.market_app.persistance.entity;
 
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Entity
@@ -16,7 +17,7 @@ public class Cliente {
 
     private String apellidos;
 
-    private Long celular; //se usa Long para evitar problemas con el formato de número de teléfono
+    private BigDecimal celular; //se usa Long para evitar problemas con el formato de número de teléfono
 
     private String direccion;
 
@@ -53,12 +54,12 @@ public class Cliente {
         this.apellidos = apellidos;
     }
 
-    public Long getCelular() {
+    public BigDecimal getCelular() {
         return celular;
     }
 
     public void setCelular(Long celular) {
-        this.celular = celular;
+        this.celular = BigDecimal.valueOf(celular);
     }
 
     public String getDireccion() {
