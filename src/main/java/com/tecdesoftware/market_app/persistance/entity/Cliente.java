@@ -58,8 +58,8 @@ public class Cliente {
         return celular;
     }
 
-    public void setCelular(Long celular) {
-        this.celular = BigDecimal.valueOf(celular);
+    public void setCelular(BigDecimal celular) {
+        this.celular = celular;
     }
 
     public String getDireccion() {
@@ -76,5 +76,13 @@ public class Cliente {
 
     public void setCorreoElectronico(String correoElectronico) {
         this.correoElectronico = correoElectronico;
+    }
+
+    public List<Compra> getCompras() {
+        return compras;
+    }
+
+    public void setCompras(List<Compra> compras) {
+        this.compras = compras;
     }
 }

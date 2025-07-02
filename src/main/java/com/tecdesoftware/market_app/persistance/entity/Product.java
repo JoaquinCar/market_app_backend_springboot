@@ -17,7 +17,7 @@ public class Product {
     private String name;
 
     @Column(name = "id_categoria")
-    private Integer IdCategoria;
+    private Integer idCategoria;
 
     @Column(name = "codigo_barras")
     private String codigoBarras;
@@ -36,7 +36,7 @@ public class Product {
     private Categoria categoria;
 
     @OneToMany(mappedBy = "producto")
-    private List<CompraProducto> Productos;
+    private List<CompraProducto> productos;
 
 
     public Integer getId() {
@@ -56,11 +56,11 @@ public class Product {
     }
 
     public Integer getIdCategoria() {
-        return IdCategoria;
+        return idCategoria;
     }
 
     public void setIdCategoria(Integer idCategoria) {
-        IdCategoria = idCategoria;
+        this.idCategoria = idCategoria;
     }
 
     public String getCodigoBarras() {
@@ -101,5 +101,13 @@ public class Product {
 
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
+    }
+
+    public List<CompraProducto> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(List<CompraProducto> productos) {
+        this.productos = productos;
     }
 }

@@ -1,26 +1,20 @@
 package com.tecdesoftware.market_app.persistance.crud;
 
-import com.tecdesoftware.market_app.persistance.ProductRepository;
 import com.tecdesoftware.market_app.persistance.entity.Product;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ProductCrudRepository extends CrudRepository<Product, Integer> {
 
-    @RestController
-    class ProductController {
-        private final ProductRepository productRepository;
+    Optional<Product> findByCantidadStockLessThanAndEstado(int stock, boolean estado);
 
-        public ProductController(ProductRepository productRepository) {
-            this.productRepository = productRepository;
-        }
+    List<Product> findByIdCategoriaOrderByNameAsc(Integer categoryId);
 
-        @GetMapping("/products")
-        public List<Product> getAllProducts() {
-            return productRepository.getAll();
-        }
-    }
+    Optional<List<Product>> findByStockLessThanAndEstado(int stock, boolean estado);
+
+
+
+
 }
