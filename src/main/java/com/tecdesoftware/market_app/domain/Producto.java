@@ -2,7 +2,7 @@ package com.tecdesoftware.market_app.domain;
 
 import java.math.BigDecimal;
 
-public class Product {
+public class Producto {
     private Integer productId;
     private String name;
     private Integer categoryId;

@@ -2,6 +2,9 @@ package com.tecdesoftware.market_app.persistance.entity;
 import java.math.BigDecimal;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 @Entity //this annotation indicates that this class is an entity and is mapped to a database table
@@ -32,10 +35,12 @@ public class Product {
     private Boolean estado;
 
     @ManyToOne
+    @JsonBackReference
     @JoinColumn(name = "id_categoria", insertable = false, updatable = false) // this column is a foreign key in the products table
     private Categoria categoria;
 
     @OneToMany(mappedBy = "producto")
+    @JsonManagedReference(value = "producto-compra")
     private List<CompraProducto> productos;
 
 

@@ -1,5 +1,7 @@
 package com.tecdesoftware.market_app.persistance.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import java.util.List;
 @Entity
@@ -18,7 +20,9 @@ public class Categoria {
     private Boolean estado;
 
 
-    @OneToMany(mappedBy = "categoria") //en mappedBy se indica el nombre del atributo en la entidad Product que hace referencia a esta entidad
+    @OneToMany(mappedBy = "categoria")
+    @JsonManagedReference
+//en mappedBy se indica el nombre del atributo en la entidad Product que hace referencia a esta entidad
     private List<Product> productos;
 
 

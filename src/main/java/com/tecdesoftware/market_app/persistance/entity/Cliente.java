@@ -1,6 +1,7 @@
 package com.tecdesoftware.market_app.persistance.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
@@ -27,6 +28,7 @@ public class Cliente {
 
     //usamos cliente para que la relación sea bidireccional, es decir, desde Compra podemos acceder a Cliente
     @OneToMany(mappedBy = "cliente") //mappedBy indica que esta entidad es la dueña de la relación
+    @JsonManagedReference
     private List<Compra> compras;
 
 

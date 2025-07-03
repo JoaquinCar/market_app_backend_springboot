@@ -1,5 +1,7 @@
 package com.tecdesoftware.market_app.persistance.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
@@ -34,9 +36,11 @@ public class Compra {
     // Relación con la entidad Cliente, join column porque id cliente es una clave foránea en la tabla compras
     @ManyToOne // indica que hay una relación de muchos a uno con la entidad Cliente
     @JoinColumn(name = "id_cliente", insertable = false, updatable = false) // nombre de la columna en la BD
+    @JsonBackReference
     private Cliente cliente;
 
     @OneToMany(mappedBy = "compra")
+    @JsonManagedReference
     private List<CompraProducto> compras;
 
 

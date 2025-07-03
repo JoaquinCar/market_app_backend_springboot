@@ -18,12 +18,17 @@ public class ProductRepository {
         return (List<Product>) productCrudRepository.findAll();
     }
 
-    public List<Product> findByCategoryId(Integer categoryId) {
-        return productCrudRepository.findByIdCategoriaOrderByNameAsc(categoryId);
+    public List<Product> findByIdCategoria(Integer idCategoria) {
+        return productCrudRepository.findByIdCategoria(idCategoria);
     }
 
-    public Optional<List<Product>> findByCantidadStockLessThanAndEstado(int stock, boolean estado) {
+
+    public Optional<List<Product>> getEscasos(int stock, boolean estado) {
         return productCrudRepository.findByStockLessThanAndEstado(stock, estado);
+    }
+
+    public Optional<Product> getProductById(Integer id){
+        return productCrudRepository.findById(id);
     }
 
     public void delete(Product product) {

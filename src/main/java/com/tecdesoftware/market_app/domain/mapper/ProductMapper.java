@@ -1,6 +1,6 @@
 package com.tecdesoftware.market_app.domain.mapper;
 
-import com.tecdesoftware.market_app.domain.Product;
+import com.tecdesoftware.market_app.domain.Producto;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -21,10 +21,10 @@ public interface ProductMapper {
         @Mapping(source = "estado", target = "active"),
         @Mapping(source = "categoria", target = "category")
     })
-    Product toProduct(com.tecdesoftware.market_app.persistance.entity.Product product);
-    List<Product> toProducts(List<com.tecdesoftware.market_app.persistance.entity.Product> products);
+    Producto toProduct(com.tecdesoftware.market_app.persistance.entity.Product product);
+    List<Producto> toProducts(List<com.tecdesoftware.market_app.persistance.entity.Product> products);
 
     @InheritInverseConfiguration
     @Mapping(target = "productos", ignore = true)
-    com.tecdesoftware.market_app.persistance.entity.Product toEntityProduct(Product product);
+    com.tecdesoftware.market_app.persistance.entity.Product toEntityProduct(Producto producto);
 }

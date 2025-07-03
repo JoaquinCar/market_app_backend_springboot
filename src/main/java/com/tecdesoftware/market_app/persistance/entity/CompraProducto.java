@@ -1,5 +1,6 @@
 package com.tecdesoftware.market_app.persistance.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 @Entity
@@ -17,10 +18,12 @@ public class CompraProducto {
 
     @ManyToOne
     @JoinColumn(name = "id_compra", insertable = false, updatable = false)
+    @JsonBackReference
     private Compra compra;
 
     @ManyToOne
     @JoinColumn(name = "id_producto", insertable = false, updatable = false)
+    @JsonBackReference(value = "producto-compra")
     private Product producto;
 
     public CompraProductoPK getId() {
