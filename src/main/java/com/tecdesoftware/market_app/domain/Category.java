@@ -1,8 +1,14 @@
 package com.tecdesoftware.market_app.domain;
-
+import com.fasterxml.jackson.annotation.JsonProperty;
 public class Category {
+
+    @JsonProperty("idCategoria")
     private Integer categoryId;
+
+    @JsonProperty("descripcion")
     private String description;
+
+    @JsonProperty("estado")
     private Boolean active;
 
     public Integer getCategoryId() {

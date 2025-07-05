@@ -1,15 +1,32 @@
 package com.tecdesoftware.market_app.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.math.BigDecimal;
 
 public class Producto {
+    @JsonProperty("id")
     private Integer productId;
+
+    @JsonProperty("nombre")
     private String name;
+
+    @JsonProperty("idCategoria")
     private Integer categoryId;
+
+    @JsonProperty("codigoBarras")
     private String barcode;
+
+    @JsonProperty("precioVenta")
     private BigDecimal price;
+
+    @JsonProperty("cantidadStock")
     private Integer stock;
+
+    @JsonProperty("estado")
     private Boolean active;
+
+    @JsonProperty("categoria")
     private Category category;
 
     public Integer getProductId() {
