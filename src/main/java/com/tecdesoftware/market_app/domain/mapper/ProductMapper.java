@@ -24,6 +24,8 @@ public interface ProductMapper {
     })
     Producto toProduct(com.tecdesoftware.market_app.persistance.entity.Product product);
     List<Producto> toProducts(List<com.tecdesoftware.market_app.persistance.entity.Product> products);
+    @InheritInverseConfiguration
+    @Mapping(target = "productos", ignore = true)
     Product toProductEntity(Producto producto);
 
     @InheritInverseConfiguration

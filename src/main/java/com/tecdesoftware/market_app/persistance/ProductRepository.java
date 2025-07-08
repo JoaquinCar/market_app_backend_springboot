@@ -43,11 +43,12 @@ public class ProductRepository implements ProductoRepository {
     }
     public void delete(Integer id) {
         productCrudRepository.deleteById(id);
+        System.out.println("Producto con ID " + id + " eliminado.");
     }
 
     @Override
     public Producto save(Producto producto) {
-        Product productEntity = productMapper.toProductEntity(producto);
+        Product productEntity = productMapper.toEntityProduct(producto);
         Product savedEntity = productCrudRepository.save(productEntity);
         return productMapper.toProduct(savedEntity);
     }

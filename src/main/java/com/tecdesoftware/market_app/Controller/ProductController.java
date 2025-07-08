@@ -6,9 +6,12 @@ import com.tecdesoftware.market_app.domain.mapper.ProductoRepository;
 import com.tecdesoftware.market_app.persistance.ProductRepository;
 import com.tecdesoftware.market_app.persistance.entity.Product;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -41,8 +44,13 @@ public class ProductController {
     }
 
     @DeleteMapping("/products/delete/{id}")
-    public void deleteProduct(@PathVariable Integer id) {
+    public ResponseEntity<Map<String, String>> deleteProduct(@PathVariable Integer id) {
         productService.delete(id);
+
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Producto eliminado correctamente");
+
+        return ResponseEntity.ok(response);
     }
 
     @PostMapping("/products/save")
