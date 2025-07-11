@@ -12,7 +12,7 @@ import java.util.List;
 public interface PurchaseMapper {
 
     @Mappings({
-        @Mapping(source = "idCompra", target = "idCompra"),
+        @Mapping(source = "id_compra", target = "idCompra"),
         @Mapping(source = "idCliente", target = "idCliente"),
         @Mapping(source = "fecha", target = "fecha"),
         @Mapping(source = "medioPago", target = "medioPago"),
