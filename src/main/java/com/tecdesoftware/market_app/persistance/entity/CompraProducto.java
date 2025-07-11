@@ -19,6 +19,7 @@ public class CompraProducto {
     @ManyToOne
     @JoinColumn(name = "id_compra", insertable = false, updatable = false)
     @JsonBackReference
+    @MapsId("id_compra") // Mapea el campo compraId de la clave primaria compuesta
     private Compra compra;
 
     @ManyToOne

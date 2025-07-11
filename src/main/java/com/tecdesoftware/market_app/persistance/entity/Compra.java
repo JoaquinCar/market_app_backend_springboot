@@ -31,15 +31,14 @@ public class Compra {
 
 
 
-
-
     // Relación con la entidad Cliente, join column porque id cliente es una clave foránea en la tabla compras
     @ManyToOne // indica que hay una relación de muchos a uno con la entidad Cliente
     @JoinColumn(name = "id_cliente", insertable = false, updatable = false) // nombre de la columna en la BD
     @JsonBackReference
     private Cliente cliente;
 
-    @OneToMany(mappedBy = "compra")
+    @OneToMany(mappedBy = "compra",
+            cascade = CascadeType.ALL)
     @JsonManagedReference
     private List<CompraProducto> compras;
 

@@ -7,7 +7,7 @@ public interface PurchaseRepository {
 
     List<Purchase> getAll();
 
-    Optional<List<Purchase>> getPurchasesByUserId(Integer idCliente);
+    Optional<List<Purchase>> getPurchasesByUserId(String idCliente);
 
     Purchase save(Purchase purchase);
 }
