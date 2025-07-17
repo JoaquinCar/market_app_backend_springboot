@@ -1,4 +1,4 @@
-package com.tecdesoftware.market_app.domain.mapper;
+package com.tecdesoftware.market_app.persistance.mapper;
 
 import com.tecdesoftware.market_app.Controller.domain.PurchaseItem;
 import com.tecdesoftware.market_app.persistance.entity.Compra;
@@ -13,8 +13,6 @@ public interface PurchaseItemMapper {
     @Mappings({
             @Mapping(source = "id.idProducto", target = "idProducto"),
             @Mapping(source = "estado", target = "active"),
-            @Mapping(target = "cantidad", ignore = true),
-            @Mapping(target = "total", ignore = true)
     })
 
     PurchaseItem toPurchaseItem(CompraProducto producto);

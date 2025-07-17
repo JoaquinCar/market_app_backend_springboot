@@ -1,8 +1,7 @@
-package com.tecdesoftware.market_app.domain;
+package com.tecdesoftware.market_app.domain.Service;
 
-import com.tecdesoftware.market_app.domain.mapper.ProductoRepository;
-import com.tecdesoftware.market_app.persistance.ProductRepository;
-import com.tecdesoftware.market_app.persistance.crud.ProductCrudRepository;
+import com.tecdesoftware.market_app.domain.Producto;
+import com.tecdesoftware.market_app.persistance.mapper.ProductoRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

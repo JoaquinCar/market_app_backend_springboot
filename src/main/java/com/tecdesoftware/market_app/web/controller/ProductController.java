@@ -1,11 +1,7 @@
-package com.tecdesoftware.market_app.Controller;
+package com.tecdesoftware.market_app.web.controller;
 
-import com.tecdesoftware.market_app.domain.ProductService;
+import com.tecdesoftware.market_app.domain.Service.ProductService;
 import com.tecdesoftware.market_app.domain.Producto;
-import com.tecdesoftware.market_app.domain.mapper.ProductoRepository;
-import com.tecdesoftware.market_app.persistance.ProductRepository;
-import com.tecdesoftware.market_app.persistance.entity.Product;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,6 +11,7 @@ import java.util.Map;
 import java.util.Optional;
 
 @RestController
+@RequestMapping("/market_app")
 public class ProductController {
 
     private final ProductService productService;

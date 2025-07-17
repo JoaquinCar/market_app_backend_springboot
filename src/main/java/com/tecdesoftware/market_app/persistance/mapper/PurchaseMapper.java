@@ -1,4 +1,4 @@
-package com.tecdesoftware.market_app.domain.mapper;
+package com.tecdesoftware.market_app.persistance.mapper;
 import com.tecdesoftware.market_app.Controller.domain.Purchase;
 import com.tecdesoftware.market_app.persistance.entity.Compra;
 import org.mapstruct.InheritInverseConfiguration;

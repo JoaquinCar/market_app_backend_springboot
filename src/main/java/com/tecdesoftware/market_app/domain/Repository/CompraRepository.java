@@ -1,8 +1,7 @@
-package com.tecdesoftware.market_app.persistance;
+package com.tecdesoftware.market_app.domain.Repository;
 
 import com.tecdesoftware.market_app.Controller.domain.Purchase;
-import com.tecdesoftware.market_app.Controller.domain.PurchaseRepository;
-import com.tecdesoftware.market_app.domain.mapper.PurchaseMapper;
+import com.tecdesoftware.market_app.persistance.mapper.PurchaseMapper;
 import com.tecdesoftware.market_app.persistance.crud.CompraCRUDRepository;
 import com.tecdesoftware.market_app.persistance.entity.Compra;
 import org.springframework.beans.factory.annotation.Autowired;

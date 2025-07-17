@@ -1,12 +1,12 @@
-package com.tecdesoftware.market_app.persistance;
+package com.tecdesoftware.market_app.domain.Repository;
 
 import com.tecdesoftware.market_app.domain.Producto;
-import com.tecdesoftware.market_app.domain.mapper.ProductMapper;
-import com.tecdesoftware.market_app.domain.mapper.ProductoRepository;
+import com.tecdesoftware.market_app.persistance.mapper.ProductMapper;
+import com.tecdesoftware.market_app.persistance.mapper.ProductoRepository;
+import com.tecdesoftware.market_app.persistance.crud.ProductCrudRepository;
 import com.tecdesoftware.market_app.persistance.entity.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import com.tecdesoftware.market_app.persistance.crud.ProductCrudRepository;
 
 import java.util.List;
 import java.util.Optional;

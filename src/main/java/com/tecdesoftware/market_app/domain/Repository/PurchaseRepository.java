@@ -1,4 +1,6 @@
-package com.tecdesoftware.market_app.Controller.domain;
+package com.tecdesoftware.market_app.domain.Repository;
+
+import com.tecdesoftware.market_app.Controller.domain.Purchase;
 
 import java.util.List;
 import java.util.Optional;
