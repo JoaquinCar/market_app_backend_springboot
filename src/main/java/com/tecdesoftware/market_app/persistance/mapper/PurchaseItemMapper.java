@@ -35,10 +35,7 @@ public interface PurchaseItemMapper {
     @Mappings({
             @Mapping(target = "idCliente", ignore = true),
             @Mapping(target = "fecha", ignore = true),
-            @Mapping(target = "medioPago", ignore = true),
-            @Mapping(target = "comentario", ignore = true),
             @Mapping(target = "cliente", ignore = true),
-            @Mapping(target = "compras", ignore = true)
     })
     Compra toCompra(PurchaseItem item);
 }

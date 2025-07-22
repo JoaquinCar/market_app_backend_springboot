@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -40,8 +41,7 @@ public class Compra {
     @OneToMany(mappedBy = "compra",
             cascade = CascadeType.ALL)
     @JsonManagedReference
-    private List<CompraProducto> compras;
-
+    private List<CompraProducto> compras = new ArrayList<>();
 
     public Integer getId_compra() {
         return id_compra;
@@ -104,6 +104,6 @@ public class Compra {
     }
 
     public void setCompras(List<CompraProducto> compras) {
-        this.compras = compras;
+        this.compras = (compras != null) ? compras : new ArrayList<>();
     }
 }
