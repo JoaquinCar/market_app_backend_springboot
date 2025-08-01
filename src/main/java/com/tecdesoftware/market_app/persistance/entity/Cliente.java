@@ -31,6 +31,8 @@ public class Cliente {
     @JsonManagedReference
     private List<Compra> compras;
 
+    private String contrasena;
+
 
     public String getId() {
         return id;
@@ -86,5 +88,12 @@ public class Cliente {
 
     public void setCompras(List<Compra> compras) {
         this.compras = compras;
+    }
+
+    public String getContrasena() {
+        return contrasena;
+    }
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 }
